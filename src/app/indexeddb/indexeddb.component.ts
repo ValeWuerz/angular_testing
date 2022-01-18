@@ -3,11 +3,11 @@ import {NgxIndexedDBService} from 'ngx-indexed-db';
 import * as pdfjs from 'pdfjs-dist/legacy/build/pdf';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'indexed',
+  templateUrl: './indexeddb.component.html',
+  styleUrls: ['./indexeddb.component.scss']
 })
-export class AppComponent implements OnInit {
+export class IndexeddbComponent implements OnInit {
   title = 'angular-testing';
   pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
   Sheet: number = 3
@@ -17,7 +17,7 @@ constructor(private dbService: NgxIndexedDBService){}
 ngOnInit(): void {
   pdfjs.GlobalWorkerOptions.workerSrc = '//cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.worker.js';
   const fileInput = <HTMLInputElement>document.getElementById('input');
-/* fileInput.onchange = () => {
+fileInput.onchange = () => {
   const selectedFile = fileInput.files[0];
   
   this.dbService.add('images', {
@@ -26,7 +26,7 @@ ngOnInit(): void {
   }).subscribe((key) => {
     console.log('key: ', key);
   });
-} */
+}
 }
 getimage(){
   console.log(this.Sheet);
