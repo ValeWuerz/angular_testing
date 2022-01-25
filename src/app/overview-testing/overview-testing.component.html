@@ -1,11 +1,11 @@
 <h1 class="text-xl font-bold">All Current Testing Components</h1>
 <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
 <nav>
-  <ul class="grid place-items-center h-screen">
-    <li class="hover:text-green-400"><a routerLink="/indexed" routerLinkActive="active">Indexed</a></li>
-    <li class="hover:text-green-400"><a routerLink="/sidemenu" routerLinkActive="active">Sidemenu</a></li>
-    <li class="hover:text-green-400"><a routerLink="/overview" routerLinkActive="active">Overview</a></li>
-  </ul>
+  <div class="grid place-items-center h-screen ">
+    <div routerLink="/indexed" class="hover:bg-green-400 w-full text-center  h-full ">Indexed</div>
+    <div routerLink="/sidemenu" class="hover:bg-green-400 w-full text-center h-full">Sidemenu</div>
+    <div routerLink="/overview" class="hover:bg-green-400 w-full text-center h-full">Overview</div>
+  </div>
 </nav>
 <!-- The routed views render in the <router-outlet>-->
 <router-outlet></router-outlet>

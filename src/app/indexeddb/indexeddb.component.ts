@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {NgxIndexedDBService} from 'ngx-indexed-db';
 import * as pdfjs from 'pdfjs-dist/legacy/build/pdf';
 
@@ -8,9 +8,13 @@ import * as pdfjs from 'pdfjs-dist/legacy/build/pdf';
   styleUrls: ['./indexeddb.component.scss']
 })
 export class IndexeddbComponent implements OnInit {
+  @ViewChild('id', { static: false }) id_input: ElementRef;
+  @ViewChild('name', { static: false }) name_input: ElementRef;
   title = 'angular-testing';
   pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
-  Sheet: number = 3
+  Sheet: number = 3;
+  sheetid: number
+  sheetname: string
 constructor(private dbService: NgxIndexedDBService){}
   
 
@@ -20,9 +24,10 @@ ngOnInit(): void {
 fileInput.onchange = () => {
   const selectedFile = fileInput.files[0];
   
-  this.dbService.add('images', {
-    name: 'bild',
-    email: selectedFile
+  this.dbService.add('sheets', {
+    id: this.sheetid,
+    name: this.sheetname,
+    imageUrl: selectedFile
   }).subscribe((key) => {
     console.log('key: ', key);
   });

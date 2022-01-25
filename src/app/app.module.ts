@@ -9,15 +9,18 @@ import { FormsModule } from '@angular/forms';
 import { IndexeddbComponent } from './indexeddb/indexeddb.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { OverviewTestingComponent } from './overview-testing/overview-testing.component';
+import { ListComponent } from './list/list.component';
 const dbConfig: DBConfig  = {
-  name: 'images',
+  name: 'sheets',
   version: 1,
   objectStoresMeta: [{
-    store: 'images',
+    store: 'sheets',
     storeConfig: { keyPath: 'id', autoIncrement: true },
     storeSchema: [
+      
+      { name: 'id', keypath: 'id', options: { unique: false } },
       { name: 'name', keypath: 'name', options: { unique: false } },
-      { name: 'email', keypath: 'email', options: { unique: false } }
+      { name: 'imageUrl', keypath: 'imageUrl', options: { unique: false } }
     ]
   }]
 };
@@ -27,7 +30,8 @@ const dbConfig: DBConfig  = {
     AppComponent,
     IndexeddbComponent,
     SidemenuComponent,
-    OverviewTestingComponent
+    OverviewTestingComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
