@@ -1,0 +1,15 @@
+<h1 class="bg-blue-400 text-center rounded-md text-gray-300">Dream Journal</h1>
+<div id="container" class="flex flex-col justify-center items-center" >
+    <label for="container" class="relative">Categories</label>
+<input type="date" [(ngModel)]="dream.day">
+<textarea  [(ngModel)]="dream.content" class="w-full" ></textarea>
+<div class="flex flex-row">
+    <input class="" type="range" min="0" max="10" value="50" [(ngModel)]=dream.felt_quality>
+    <div>{{dream.felt_quality}}</div>
+</div>
+<div class="flex flex-row">
+    <input class="" type="range" min="0" max="10" value="50"  [(ngModel)]=dream.dream_intensity>
+    <div>{{dream.dream_intensity}}</div>
+</div>
+<button (click)="store_dream()" class="rounded-lg bg-blue-400 w-1/2 align-middle">Store_dream</button>
+</div>
