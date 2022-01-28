@@ -15,7 +15,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 const dbConfig: DBConfig  = {
   name: 'data',
-  version: 1,
+  version: 3,
   objectStoresMeta: [{
     store: 'sheets',
     storeConfig: { keyPath: 'id', autoIncrement: true },
@@ -35,7 +35,7 @@ const dbConfig: DBConfig  = {
       { name: 'content', keypath: 'content', options: { unique: false } },
       { name: 'felt_quality', keypath: 'felt_quality', options: { unique: false } },
       { name: 'dream_intensity', keypath: 'dream_intensity', options: { unique: false } },
-      
+      //
     ]
   },
 ]

@@ -12,4 +12,6 @@
     <div>{{dream.dream_intensity}}</div>
 </div>
 <button (click)="store_dream()" class="rounded-lg bg-blue-400 w-1/2 align-middle">Store_dream</button>
+<div *ngFor="let dream of all_dreams, let i = index" (click)="get_dream(i)">{{dream.day}}</div>
+<button (click)="delete_all()" class="rounded-lg bg-blue-400 w-1/2 align-middle">Delete all dreams</button>
 </div>
